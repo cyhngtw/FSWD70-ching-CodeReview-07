@@ -1,0 +1,57 @@
+.positionr{
+	position: relative;
+}
+
+.positiona1{
+	position: absolute;
+	top: 25%;
+	left: 20%;
+	letter-spacing: 1px ;
+}
+
+.positiona2{
+	position: absolute;
+	top: 35%;
+	left: 20%;
+	letter-spacing: 1px ;
+}
+.positiona3{
+	position: absolute;
+	top: 45%;
+	left: 20%;
+	width: 350px;
+	text-align: justify;
+}
+.positiona4{
+	position: absolute;
+	top: 70%;
+	left: 20%;
+	
+}
+.bg {
+  background: url(src/assets/bg.jpg )50% 50%;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  text-align: center;
+  height: 600px;
+  width: 100%;
+  padding: 10%;
+}
+.font1{
+	font-family: 'IM Fell Double Pica', serif;
+	color: 3D3C3C;
+}
+.font{
+	
+	color: darkgray;
+}
+
+.flex{
+   display: flex;
+   flex-direction: row;
+}
+.flex1{
+	flex: 1;
+	color: darkgray;
+	text-decoration-line: underline;
+}

@@ -1,0 +1,124 @@
+<div>
+  <h3>please register here and we will contact with you soon!</h3>
+</div>
+<div class="row mx-5 p-5">
+  <div class="col-md-5">
+    <form [formGroup]="this.travelService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key">
+      <div class="form-group">
+        <label>Last name</label>
+        <!-- we will add this class is-invalid with the help of [ngClass] directive
+                                this class will be applied when the form is submitted and we have a validation error regarding full name -->
+        <input formControlName="lastName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.lastName.errors}">
+        <!-- now we will add an additional due to show the exact reason for the validation error so here we have the deal with this class invilid-feedback
+                                        only based on the same condition inside that -->
+        <div class="invalid-feedback" *ngIf="submitted && formControls.lastName.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>first name</label>
+        <!-- we will add this class is-invalid with the help of [ngClass] directive
+                                this class will be applied when the form is submitted and we have a validation error regarding full name -->
+        <input formControlName="firstName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.firstName.errors}">
+        <!-- now we will add an additional due to show the exact reason for the validation error so here we have the deal with this class invilid-feedback
+                                        only based on the same condition inside that -->
+        <div class="invalid-feedback" *ngIf="submitted && formControls.firstName.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <!-- here we add the the invalid class based on the same condition for email and the possible error for this email control is due to the invalid email address -->
+        <input formControlName="email" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.email.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">invalid email address ..</div>
+      </div>
+      <div class="form-group">
+        <label>Mobile</label>
+        <input formControlName="mobile" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.mobile.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.mobile.errors">
+          <label *ngIf="formControls.mobile.errors.required">This field is required</label>
+          <label *ngIf="formControls.mobile.errors.minlength">at least 8 numbers</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tourpackage</label>
+        <input formControlName="tourpackage" class="form-control" placeholder="please enter only package no. such as 1 only" [ngClass]="{'is-invalid':submitted && formControls.tourpackage.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.tourpackage.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit">
+        <div class="alert alert-info" *ngIf="showSuccessMessage">
+          submitted successfully, we will contact you soon!
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-5 offset-md-2">
+    <app-travel-list></app-travel-list>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <a href="#"><img class="card-img-top" src="/assets/resort1.jpg" alt="" width="300rem" height="200rem"></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">Package 1</a>
+        </h4>
+        <h5>899 euro</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <a href="#"><img class="card-img-top" src="/assets/resort2.jpg" alt="" width="300rem" height="200rem"></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">Package 2</a>
+        </h4>
+        <h5>999 euro</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <a href="#"><img class="card-img-top" src="/assets/resort3.jpg" alt="" width="300rem" height="200rem"></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">Package 3</a>
+        </h4>
+        <h5>1099 euro</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <a href="#"><img class="card-img-top" src="/assets/resort4.jpg" alt="" width="300rem" height="200rem"></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">Package 4</a>
+        </h4>
+        <h5>1199 euro</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <a href="#"><img class="card-img-top" src="/assets/resort5.jpg" alt="" width="300rem" height="200rem"></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">Package 5</a>
+        </h4>
+        <h5>1299 euro</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+      <a href="#"><img class="card-img-top" src="/assets/resort6.jpg" alt="" width="300rem" height="200rem"></a>
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">Package 6</a>
+        </h4>
+        <h5>1599 euro</h5>
+      </div>
+    </div>
+  </div>
+</div><!-- ---close row -->
